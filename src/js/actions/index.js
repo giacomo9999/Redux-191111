@@ -8,4 +8,3 @@ export function addArticle(payload) {
 export function removeArticle(payload) {
   return { type: REMOVE_ARTICLE, payload };
 }
-
