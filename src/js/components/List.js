@@ -1,6 +1,18 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const List = () => {
-  return <h1>I Am The List</h1>;
+const mapStateToProps = state => {
+  return { articles: state.articles };
 };
+
+const ConnectedList = ({ articles }) => (
+  <ul>
+    {articles.map(el => (
+      <li key={"Article" + el.id}>{el.title}</li>
+    ))}
+  </ul>
+);
+
+const List = connect(mapStateToProps)(ConnectedList);
+
 export default List;
